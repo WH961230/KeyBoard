@@ -195,8 +195,36 @@ PrefabInstance:
       value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.52
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.84
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000027810154
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000093876864
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7976856
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.60307354
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 74.181
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bf2ffc0538fc6c4f96f1ef530a2273b, type: 3}
       propertyPath: m_Name
@@ -640,4 +668,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfc7d6a424365244973e52d7cba9559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyBoardClip: {fileID: 8300000, guid: 47cc72b56ec37b74e8f431163cb2419a, type: 3}
+  keyBoardDownClip: {fileID: 8300000, guid: 9c2b485f52204bc4ca9aeddc3e232fa4, type: 3}
+  keyBoardUpClip: {fileID: 8300000, guid: 99e72c6273f1cd14486ee11f95ce929c, type: 3}

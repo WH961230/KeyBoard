@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class KeyBoardControl : MonoBehaviour
 {
-    [SerializeField] private AudioClip keyBoardClip;
+    [SerializeField] private AudioClip keyBoardDownClip;
+    [SerializeField] private AudioClip keyBoardUpClip;
     private AudioSource audioSource;
     private Animator animator;
     void Start()
@@ -17,11 +18,24 @@ public class KeyBoardControl : MonoBehaviour
         {
             if (null != animator)
             {
-                animator.SetTrigger("KeyCodeSpace");
+                animator.SetBool("KeyCode", true);
             }
             if (null != audioSource)
             {
-                audioSource.clip = keyBoardClip;
+                audioSource.clip = keyBoardDownClip;
+                audioSource.Play();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (null != animator)
+            {
+                animator.SetBool("KeyCode", false);
+            }
+            if (null != audioSource)
+            {
+                audioSource.clip = keyBoardUpClip;
                 audioSource.Play();
             }
         }
