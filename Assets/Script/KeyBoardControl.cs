@@ -1,40 +1,44 @@
+using System;
 using UnityEngine;
 
 public class KeyBoardControl : MonoBehaviour
 {
     [SerializeField] private AudioClip keyBoardDownClip;
     [SerializeField] private AudioClip keyBoardUpClip;
+    private const string KeyCodeAnimParam = "KeyCode";
     private AudioSource audioSource;
     private Animator animator;
+    private Action keyCodeEvent;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        keyCodeEvent += KeyCodeAction;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKeyDown) {
+            keyCodeEvent.Invoke();
+        }
+    }
+
+    void Quit() {
+        keyCodeEvent -= KeyCodeAction;
+    }
+
+    void KeyCodeAction() 
+    {
+        foreach(KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
         {
-            if (null != animator)
-            {
-                animator.SetBool("KeyCode", true);
-            }
-            if (null != audioSource)
-            {
+            if (Input.GetKeyDown(kcode)) {
+                animator.SetBool(KeyCodeAnimParam, true);
                 audioSource.clip = keyBoardDownClip;
                 audioSource.Play();
             }
-        }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            if (null != animator)
-            {
-                animator.SetBool("KeyCode", false);
-            }
-            if (null != audioSource)
-            {
+            if (Input.GetKeyUp(kcode)) {
+                animator.SetBool(KeyCodeAnimParam, false);
                 audioSource.clip = keyBoardUpClip;
                 audioSource.Play();
             }
